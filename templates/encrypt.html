@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<center><h1>Encrypt The Text</h1></center>
+<div class="content-section">
+
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <div class="form-group">
+                    {{ form.normalText.label(class="form-control-label") }}
+                    {% if form.normalText.errors %}
+                        {{ form.normalText(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.normalText.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.normalText(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+
+                </div>
+
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+            <small class="text-muted ml-2">
+                <a href={{ url_for('decrypt') }}>Wanna decrypt?</a>
+            </small>
+        </form>
+    </div>
+{% endblock content %}
