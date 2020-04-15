@@ -7,13 +7,12 @@
           <h1 class="display-2"><span class="vim-caret">H</span>idden Message</h1>
           <div class="lead mb-3 text-mono text-success">Your messages for seeking eyes..</div>
           <div class="text-mono">
-            <a href="#!"
-               title="Download Theme"
+            <a href={{ url_for('encrypt') }}
+               title="Encrypt"
                class="btn btn-success btn-shadow px-3 my-2 ml-0 text-left">
                Encrypt
             </a>
-            <a href="#!"
-               class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left">
+            <a href={{ url_for('encrypt') }} class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left">
                Decrypt
             </a>
           </div>
